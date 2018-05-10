@@ -7,13 +7,13 @@ using System.ComponentModel;
 
 namespace TreeSizer
 {
-    public class TreeListProcessor
+    public class CMTreeListProcessor
     {
         protected FileInfo mobjTreeListFile = null;
         private BackgroundWorker mobjBckWrk = null;
 
 
-        public TreeListProcessor(FileInfo objFile)
+        public CMTreeListProcessor(FileInfo objFile)
         {
             string strMess;
             if (objFile == null)

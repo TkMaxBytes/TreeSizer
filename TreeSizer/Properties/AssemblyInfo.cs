@@ -14,6 +14,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
+
+/**Terrence Knoesen 
+ * Configure the Log4Net setings from the appliation config file.**/
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
+
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.

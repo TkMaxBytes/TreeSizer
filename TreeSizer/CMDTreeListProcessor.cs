@@ -3,7 +3,7 @@ using System.IO;
 
 namespace TreeSizer
 {
-    public class CMDTreeListProcessor : TreeListProcessor
+    public class CMDTreeListProcessor : CMTreeListProcessor
     {
 
         public CMDTreeListProcessor(FileInfo objfile) : base (objfile) {}
@@ -21,8 +21,16 @@ namespace TreeSizer
                 strMess = String.Format("The TreeListFile doesn't exist!\n\nFile is '{0}' ", mobjTreeListFile.FullName);
                 throw new ApplicationException(strMess);
             }
+            /**Terrence Knoesen 
+             * Check to make sure that the file is not zero Length
+            **/
+            if (mobjTreeListFile.Length == 0)
+            {
+                strMess = String.Format("The TreeListFile '{0}' \n\nIs zero bytes in length!", mobjTreeListFile.FullName);
+                throw new ApplicationException(strMess);
+            }
 
-            
+
             long lngFileSize = 0;
             StreamReader strm = new StreamReader(mobjTreeListFile.FullName);
             string strBuf = null;

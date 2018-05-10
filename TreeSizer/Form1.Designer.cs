@@ -62,7 +62,7 @@
             this.textBox_TreeListFilePath.Name = "textBox_TreeListFilePath";
             this.textBox_TreeListFilePath.Size = new System.Drawing.Size(344, 22);
             this.textBox_TreeListFilePath.TabIndex = 2;
-            this.textBox_TreeListFilePath.Text = "c:\\temp\\cmddirs.txt";
+            this.textBox_TreeListFilePath.Text = "c:\\temp\\smalldir.txt";
             // 
             // button_ProcessListing
             // 
