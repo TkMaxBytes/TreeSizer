@@ -30,16 +30,11 @@ namespace TreeSizer.UnitTest
 
         #endregion //================================================
 
-        #region Methods
-
-        #endregion //================================================
-
         #region Events
 
         #endregion //================================================
 
-
-
+        #region Methods
         [OneTimeSetUp]
         public void SetupDirs()
         {
@@ -53,7 +48,7 @@ namespace TreeSizer.UnitTest
         }
 
         [Test]
-        public void CTOR_CMTreeListProcessor_NoPathForFileInfo()
+        public void CMTreeListProcessor_CTOR_NoPathForFileInfo()
         {
             /**Terrence Knoesen 
              * Check that an ArgumentNullException is thrown for this scenario.
@@ -63,7 +58,7 @@ namespace TreeSizer.UnitTest
         }
 
         [Test]
-        public void CTOR_CMTreeListProcessor_InvalidPath()
+        public void CMTreeListProcessor_CTOR_InvalidPath()
         {
             /**Terrence Knoesen 
              * Check that an ArgumentNullException is thrown for this scenario.
@@ -74,14 +69,14 @@ namespace TreeSizer.UnitTest
         }
 
         [Test]
-        public void CTOR_CMTreeListProcessor_BlankFile()
+        public void CMTreeListProcessor_CTOR_BlankFile()
         {
 
             /**Terrence Knoesen 
              * Get the path to the BlankDoc.txt as this is used for this test
             **/
             string strFileName = Path.Combine(mstrDataDir, "BlankDoc.txt");
-            
+
             /**Terrence Knoesen 
              * Check that an ArgumentNullException is thrown for this scenario.
             **/
@@ -90,10 +85,36 @@ namespace TreeSizer.UnitTest
             Assert.That(ex.Message, Is.EqualTo(strExpectedMessage));
             //Debug.WriteLine(ex.Message);
         }
+
+        [Test]
+        public void CMTreeListProcessor_Start_CheckDosDirFile()
+        {
+            string strMess;
+            string strFileName = Path.Combine(mstrDataDir, "smalldir.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception)
+            {
+                strMess = "Creating the CMDTreeListProcessor should work!";
+                Assert.Fail(strMess);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                strMess = "Straight fail!\n" + ex.Message;
+                Assert.Fail(strMess);
+            }
+
+            
+        }
+        #endregion //================================================
     }
-
-
-
 
     static class Utils
     {

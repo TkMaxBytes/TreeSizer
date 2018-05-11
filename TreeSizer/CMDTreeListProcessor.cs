@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace TreeSizer
 {
@@ -33,33 +35,39 @@ namespace TreeSizer
 
             long lngFileSize = 0;
             StreamReader strm = new StreamReader(mobjTreeListFile.FullName);
-            string strBuf = null;
-
+            List<int> lstBuf = new List<int>();
+            long lngIdx = 0;
             lngFileSize = strm.BaseStream.Length;
+            int intLineCnt = 0;
             Stream strmB = strm.BaseStream;
-            byte[] bytBuff = new byte[200];
-            if (lngFileSize >= 200)
+            byte[] bytBuff = new byte[1];
+            bool blnRead = true;
+            bool blnIsDosDir = false;
+            while (intLineCnt < 5)
             {
+                lngIdx++;
                 if (strmB.CanSeek)
                 {
+                    strmB.Seek(lngFileSize - lngIdx, SeekOrigin.Begin);
+                    lstBuf.Add(strmB.ReadByte());
+                    if (lstBuf[lstBuf.Count -1] == 10) intLineCnt++;
+                    Debug.Write(Char.ConvertFromUtf32(lstBuf[lstBuf.Count - 1]));
                     
-                    strmB.Seek(lngFileSize - 1024, 0);
-                    //strmB.Read(bytBuff, (int)lngFileSize - 1024, 1024);
-                    strmB.Read(bytBuff, 0, 1024);
-                }                
+
+                }
+                else
+                {
+                    blnRead = false;
+                }
 
             }
-
-
-            //while (!strm.EndOfStream)
-            //{
-            //    strBuf = strm.ReadLine();
-            //    if (!String.IsNullOrEmpty(strBuf))
-            //    {
-            //        lngFileSize++;
-            //    }
-
-            //}//End While
+            string strLastLines = null;
+            lstBuf.Reverse();
+            foreach (var item in lstBuf)
+            {
+                strLastLines += Char.ConvertFromUtf32(item);
+            }
+            Debug.WriteLine(strLastLines);
         }//Start Method
 
     }
