@@ -3,7 +3,7 @@ using System.IO;
 
 namespace TreeSizer
 {
-    public class CMDTreeListProcessor : CMTreeListProcessor
+    public class CMDTreeListProcessor : TreeListProcessor
     {
 
         public CMDTreeListProcessor(FileInfo objfile) : base (objfile) {}

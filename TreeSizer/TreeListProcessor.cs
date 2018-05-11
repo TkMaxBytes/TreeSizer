@@ -7,13 +7,13 @@ using System.ComponentModel;
 
 namespace TreeSizer
 {
-    public class CMTreeListProcessor
+    public class TreeListProcessor
     {
         protected FileInfo mobjTreeListFile = null;
         private BackgroundWorker mobjBckWrk = null;
 
 
-        public CMTreeListProcessor(FileInfo objFile)
+        public TreeListProcessor(FileInfo objFile)
         {
             string strMess;
             if (objFile == null)
@@ -23,8 +23,8 @@ namespace TreeSizer
             }
             if (!objFile.Exists)
             {
-                strMess = String.Format("The TreeListFile doesn't exist!\n\nFile is '{0}' ", objFile.FullName);
-                throw new ApplicationException(strMess);
+                strMess = String.Format("The TreeListFile doesn't exist!\n\nFile is '{0}'.", objFile.FullName);
+                throw new IOException(strMess);
             }
             //Terrence Knoesen Make a copy of the file object.
             mobjTreeListFile = new FileInfo(objFile.FullName);
