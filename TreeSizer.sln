@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeSizer", "TreeSizer\TreeSizer.csproj", "{20782E06-F246-45F1-A545-821A3B610D3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeSizer.UnitTest", "TreeSizer.UnitTest\TreeSizer.UnitTest.csproj", "{7099FFC6-A95C-41D4-B328-80A42D3E7240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{20782E06-F246-45F1-A545-821A3B610D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20782E06-F246-45F1-A545-821A3B610D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20782E06-F246-45F1-A545-821A3B610D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7099FFC6-A95C-41D4-B328-80A42D3E7240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7099FFC6-A95C-41D4-B328-80A42D3E7240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7099FFC6-A95C-41D4-B328-80A42D3E7240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7099FFC6-A95C-41D4-B328-80A42D3E7240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
