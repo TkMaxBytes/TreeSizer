@@ -26,6 +26,12 @@ namespace TreeSizer
                 strMess = String.Format("The TreeListFile doesn't exist!\n\nFile is '{0}'.", objFile.FullName);
                 throw new IOException(strMess);
             }
+            if (objFile.Length == 0)
+            {
+                strMess = String.Format("The TreeListFile '{0}' \n\nIs zero bytes in length!", objFile.FullName);
+                throw new ApplicationException(strMess);
+            }
+
             //Terrence Knoesen Make a copy of the file object.
             mobjTreeListFile = new FileInfo(objFile.FullName);
         }

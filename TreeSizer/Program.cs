@@ -7,7 +7,7 @@ namespace TreeSizer
 {
     static class Program
     {
-        private static readonly ILog Log =
+        private static readonly ILog mobjLog =
         LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         /// <summary>
         /// The main entry point for the application.
@@ -15,7 +15,7 @@ namespace TreeSizer
         [STAThread]
         static void Main()
         {
-            Log.Info("First Log");
+            mobjLog.Info("First Log");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
@@ -24,7 +24,7 @@ namespace TreeSizer
 
         public static string GetApplicationName(int intReturnType)
         {
-            Log.Debug("Enter");
+            mobjLog.Debug("Enter");
             string strVer;
 
             Assembly asm = Assembly.GetExecutingAssembly();
@@ -35,14 +35,14 @@ namespace TreeSizer
             switch (intReturnType)
             {
                 case 0:
-                    Log.Debug("Exit");
+                    mobjLog.Debug("Exit");
                     return strName;
                 case 1:
                     strVer = String.Format("{0} - {1}.{2}.{3}.{4}", strName, objVer.Major, objVer.Minor, objVer.Build, objVer.Revision);
-                    Log.Debug("Exit");
+                    mobjLog.Debug("Exit");
                     return strVer;
                 default:
-                    Log.Debug("Exit");
+                    mobjLog.Debug("Exit");
                     return strName;
             }
         }

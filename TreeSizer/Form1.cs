@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using DotNetUtils;
 using System.Diagnostics;
 
 namespace TreeSizer
@@ -17,6 +18,8 @@ namespace TreeSizer
         public Form1()
         {
             InitializeComponent();
+            //this.Text = Program.GetApplicationName(1);
+            this.Text = GeneralUtils.GetApplicationName(1);
         }
 
         private void button_ProcessListing_Click(object sender, EventArgs e) {
