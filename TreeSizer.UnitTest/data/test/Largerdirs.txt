@@ -1,0 +1,379 @@
+ Volume in drive H is BackupDrive
+ Volume Serial Number is B835-3887
+
+ Directory of H:\Music
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+25/04/2014  19:52    <DIR>          Abba
+25/04/2014  19:52    <DIR>          Baha Men
+25/04/2014  19:52    <DIR>          Beyonce Knowles
+25/04/2014  19:52    <DIR>          Bob The Builder
+24/12/2017  22:54    <DIR>          Clean Bandit
+24/12/2017  22:54    <DIR>          David Guetta
+25/04/2014  19:52    <DIR>          Eliza Doolittle
+25/04/2014  19:52    <DIR>          Jive Bunny And The Mastermixers
+25/04/2014  19:52    <DIR>          Katy Perry
+25/04/2014  19:52    <DIR>          Kid's Players
+25/04/2014  19:52    <DIR>          Lady Gaga
+25/04/2014  19:52    <DIR>          Michael Bubl‚
+25/04/2014  19:52    <DIR>          Playlists
+25/04/2014  19:52    <DIR>          Postman Pat
+25/04/2014  19:52    <DIR>          Reel 2 Real feat. The Mad Stuntman
+25/04/2014  19:52    <DIR>          Rihanna
+25/04/2014  19:52    <DIR>          Take That
+25/04/2014  19:52    <DIR>          The Black Eyed Peas
+25/04/2014  19:52    <DIR>          The Party Cats
+24/12/2017  22:54    <DIR>          Various
+24/12/2017  22:54    <DIR>          Various Artists
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Abba
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Abba Gold Greatest Hits
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Abba\Abba Gold Greatest Hits
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         6,785,498 04 - Mamma Mia.mp3
+               1 File(s)      6,785,498 bytes
+
+ Directory of H:\Music\Baha Men
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Who Let The Dog's Out_
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Baha Men\Who Let The Dog's Out_
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         6,248,381 01 - Who Let The Dog's Out_.mp3
+               1 File(s)      6,248,381 bytes
+
+ Directory of H:\Music\Beyonce Knowles
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          If I Were A Boy
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Beyonce Knowles\If I Were A Boy
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         5,797,405 02 - Single Ladies (Put A Ring On It).mp3
+               1 File(s)      5,797,405 bytes
+
+ Directory of H:\Music\Bob The Builder
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Big Fish Little Fish
+25/04/2014  19:52    <DIR>          Bob The Builder - The Album
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Bob The Builder\Big Fish Little Fish
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         7,003,478 02 - Big Fish Little Fish (Album Version).mp3
+               1 File(s)      7,003,478 bytes
+
+ Directory of H:\Music\Bob The Builder\Bob The Builder - The Album
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         6,200,849 01 - Can We Fix It _.mp3
+11/06/2011  21:54         6,442,840 02 - Mambo No 5.mp3
+               2 File(s)     12,643,689 bytes
+
+ Directory of H:\Music\Clean Bandit
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+24/12/2017  22:54    <DIR>          Rockabye (feat. Sean Paul & Anne-Marie)
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Clean Bandit\Rockabye (feat. Sean Paul & Anne-Marie)
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+24/12/2017  22:52         8,581,308 01 - Rockabye (feat. Sean Paul & Anne-Marie).mp3
+               1 File(s)      8,581,308 bytes
+
+ Directory of H:\Music\David Guetta
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+24/12/2017  22:54    <DIR>          Nothing But the Beat Ultimate [Explicit]
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\David Guetta\Nothing But the Beat Ultimate [Explicit]
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+24/12/2017  22:52         8,551,028 01 - Titanium (feat. Sia).mp3
+               1 File(s)      8,551,028 bytes
+
+ Directory of H:\Music\Eliza Doolittle
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Eliza Doolittle
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Eliza Doolittle\Eliza Doolittle
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         5,300,902 11 - Pack Up.mp3
+               1 File(s)      5,300,902 bytes
+
+ Directory of H:\Music\Jive Bunny And The Mastermixers
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Jive Bunny And The Mastermixers Hop Around The Clock
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Jive Bunny And The Mastermixers\Jive Bunny And The Mastermixers Hop Around The Clock
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         6,676,806 03 - That's What I Like_ Hawaii 5-0, Let's Twist Again, Let'.mp3
+               1 File(s)      6,676,806 bytes
+
+ Directory of H:\Music\Katy Perry
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          California Gurls (Feat. Snoop Dogg)
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Katy Perry\California Gurls (Feat. Snoop Dogg)
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         6,910,911 01 - California Gurls (Feat. Snoop Dogg).mp3
+               1 File(s)      6,910,911 bytes
+
+ Directory of H:\Music\Kid's Players
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Children's Party Time
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Kid's Players\Children's Party Time
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         4,629,910 14 - Hokey Cokey.mp3
+               1 File(s)      4,629,910 bytes
+
+ Directory of H:\Music\Lady Gaga
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Bad Romance
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Lady Gaga\Bad Romance
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:31         9,730,655 01 - Bad Romance.mp3
+               1 File(s)      9,730,655 bytes
+
+ Directory of H:\Music\Michael Bubl‚
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Haven't Met You Yet
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Michael Bubl‚\Haven't Met You Yet
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         8,081,347 01 - Haven't Met You Yet.mp3
+               1 File(s)      8,081,347 bytes
+
+ Directory of H:\Music\Playlists
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+06/05/2011  19:29             5,055 Abi's PlayList.wpl
+               1 File(s)          5,055 bytes
+
+ Directory of H:\Music\Postman Pat
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Great Big Party
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Postman Pat\Great Big Party
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:33         6,907,002 15 - Postman Pat Theme_Jess The Cat (Postman Pat Medley).mp3
+               1 File(s)      6,907,002 bytes
+
+ Directory of H:\Music\Reel 2 Real feat. The Mad Stuntman
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          I Like To Move It [2010 Mixes]
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Reel 2 Real feat. The Mad Stuntman\I Like To Move It [2010 Mixes]
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:33         7,288,923 02 - I Like To Move It (Radio Mix).mp3
+               1 File(s)      7,288,923 bytes
+
+ Directory of H:\Music\Rihanna
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Only Girl (In The World)
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Rihanna\Only Girl (In The World)
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:34         7,680,675 01 - Only Girl (In The World).mp3
+               1 File(s)      7,680,675 bytes
+
+ Directory of H:\Music\Take That
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Beautiful World
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Take That\Beautiful World
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:32         7,528,073 06 - Shine.mp3
+               1 File(s)      7,528,073 bytes
+
+ Directory of H:\Music\The Black Eyed Peas
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          The E.N.D. (The Energy Never Dies)
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\The Black Eyed Peas\The E.N.D. (The Energy Never Dies)
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:34         9,516,087 05 - I Gotta Feeling.mp3
+               1 File(s)      9,516,087 bytes
+
+ Directory of H:\Music\The Party Cats
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+25/04/2014  19:52    <DIR>          Kids Dance Party
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\The Party Cats\Kids Dance Party
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         7,932,023 07 - U Can't Touch This (Kids Dance Party).mp3
+               1 File(s)      7,932,023 bytes
+
+ Directory of H:\Music\Various
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+25/04/2014  19:52    <DIR>          Cars Original Soundtrack (English Version)
+24/12/2017  22:54    <DIR>          NOW That's What I Call Music! 97 [Clean]
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Various\Cars Original Soundtrack (English Version)
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         9,579,474 03 - Life Is A Highway.mp3
+               1 File(s)      9,579,474 bytes
+
+ Directory of H:\Music\Various\NOW That's What I Call Music! 97 [Clean]
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+24/12/2017  22:52         8,647,874 05 - Symphony.mp3
+               1 File(s)      8,647,874 bytes
+
+ Directory of H:\Music\Various Artists
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+25/04/2014  19:52    <DIR>          CBeebies Song Time
+25/04/2014  19:52    <DIR>          Disney Doubles - Little Mermaid
+25/04/2014  19:52    <DIR>          Disney's Greatest Hits
+24/12/2017  22:54    <DIR>          Pitch Perfect 2 (Original Motion Picture Soundtrac
+25/04/2014  19:52    <DIR>          Toy Story Original Soundtrack (English Version)
+25/04/2014  19:52    <DIR>          Ultimate Pop Party
+               0 File(s)              0 bytes
+
+ Directory of H:\Music\Various Artists\CBeebies Song Time
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         5,324,812 28 - Space Pirates Theme.mp3
+               1 File(s)      5,324,812 bytes
+
+ Directory of H:\Music\Various Artists\Disney Doubles - Little Mermaid
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         5,974,293 08 - Under The Sea.mp3
+               1 File(s)      5,974,293 bytes
+
+ Directory of H:\Music\Various Artists\Disney's Greatest Hits
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:33         3,566,668 (Disc 2) 02 - Supercalifragilisticexpialidocious.mp3
+04/05/2011  20:33         6,583,673 03 - I Wan'na Be Like You.mp3
+04/05/2011  20:33         6,339,549 14 - The Bare Necessities.mp3
+               3 File(s)     16,489,890 bytes
+
+ Directory of H:\Music\Various Artists\Pitch Perfect 2 (Original Motion Picture Soundtrac
+
+24/12/2017  22:54    <DIR>          .
+24/12/2017  22:54    <DIR>          ..
+24/12/2017  22:52         6,735,907 17 - Flashlight (From _Pitch Perfect 2_ Soundtrack).mp3
+               1 File(s)      6,735,907 bytes
+
+ Directory of H:\Music\Various Artists\Toy Story Original Soundtrack (English Version)
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+04/05/2011  20:34         3,884,015 01 - You've Got A Friend In Me.mp3
+               1 File(s)      3,884,015 bytes
+
+ Directory of H:\Music\Various Artists\Ultimate Pop Party
+
+25/04/2014  19:52    <DIR>          .
+25/04/2014  19:52    <DIR>          ..
+11/06/2011  21:54         6,823,886 21 - Locomotion.mp3
+               1 File(s)      6,823,886 bytes
+
+     Total Files Listed:
+              31 File(s)    207,259,307 bytes
+             146 Dir(s)  949,450,805,248 bytes free

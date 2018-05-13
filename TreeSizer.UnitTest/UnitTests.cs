@@ -90,7 +90,10 @@ namespace TreeSizer.UnitTest
         public void CMTreeListProcessor_Start_CheckDosDirFile()
         {
             string strMess;
-            string strFileName = Path.Combine(mstrDataDir, "smalldir.txt");
+            //string strFileName = Path.Combine(mstrDataDir, "smalldir.txt");
+            //string strFileName = Path.Combine(mstrDataDir, "Largerdirs.txt");
+            string strFileName = Path.Combine(mstrDataDir, "BigDirs.txt");
+            
             CMDTreeListProcessor objProc = null;
             try
             {

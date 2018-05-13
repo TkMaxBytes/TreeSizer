@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 
 namespace TreeSizer
@@ -68,6 +69,48 @@ namespace TreeSizer
                 strLastLines += Char.ConvertFromUtf32(item);
             }
             Debug.WriteLine(strLastLines);
+            strLastLines = strLastLines.Replace("\r", String.Empty);
+            strLastLines = strLastLines.Replace("\n", String.Empty);
+            Debug.WriteLine(strLastLines);
+            /**Terrence Knoesen 
+             * Check that we have a DOS dir command produced file.
+            **/
+            //"Total Files Listed:"
+            Regex objRegx = new Regex(@"Total\sFiles\sListed\:");
+            string fldFiles = null;
+            string fldDirs = null;
+            MatchCollection colMatches = null;
+            if (objRegx.IsMatch(strLastLines))
+            {
+                blnIsDosDir = true;
+                objRegx = new Regex(@"\:\s+(?<fldFiles>.+)\sFile\(s\)");
+                colMatches = objRegx.Matches(strLastLines);
+                if (colMatches.Count > 0)
+                {
+                    fldFiles = colMatches[0].Groups["fldFiles"].Value;
+                }
+                else
+                {
+                    blnIsDosDir = false;
+                }
+                if (blnIsDosDir == true)
+                {
+                    objRegx = new Regex(@"\sbytes\s+(?<fldDirs>.+)\sDir\(s\)");
+                    colMatches = objRegx.Matches(strLastLines);
+                    if (colMatches.Count > 0)
+                    {
+                        fldDirs  = colMatches[0].Groups["fldDirs"].Value;
+                    }
+                    else
+                    {
+                        blnIsDosDir = false;
+                    }
+                }
+            }
+            
+
+
+            
         }//Start Method
 
     }
