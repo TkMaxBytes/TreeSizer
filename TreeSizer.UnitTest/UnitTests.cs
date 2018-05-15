@@ -168,11 +168,62 @@ namespace TreeSizer.UnitTest
                 strMess = "Straight fail!\n" + ex.Message;
                 Assert.Fail(strMess);
             }
-
-            
         }
 
-        
+
+        [Test]
+        public void CMTreeListProcessor_Start_NonDosListingCheck()
+        {
+
+            string strMess;
+            string strFileName = Path.Combine(mstrDataDir, "NotDosList.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                Assert.True(ex.GetType() == typeof(ApplicationException));
+                Assert.True(ex.Message.Contains(" is not a DOS directory listing!"));
+            }
+        }
+
+        [Test]
+        public void CMTreeListProcessor_Start_NonDosListingSmallFile()
+        {
+
+            string strMess;
+            string strFileName = Path.Combine(mstrDataDir, "NotDosListSmallFile.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                Assert.True(ex.GetType() == typeof(ApplicationException));
+                Assert.True(ex.Message.Contains(" is too small to be a DOS directory list!"));
+            }
+        }
+
+
 
         #endregion //================================================
     }

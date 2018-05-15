@@ -100,22 +100,30 @@ namespace TreeSizer
             byte[] bytBuff = new byte[1];
             bool blnRead = true;
             bool blnIsDosDir = false;
-            while (intLineCnt < 5)
+            while (lngIdx < lngFileSize & lngIdx < 200)
             {
                 lngIdx++;
                 if (strmB.CanSeek)
                 {
                     strmB.Seek(lngFileSize - lngIdx, SeekOrigin.Begin);
                     lstBuf.Add(strmB.ReadByte());
-                    if (lstBuf[lstBuf.Count - 1] == 10) intLineCnt++;
+                    
                 }
                 else
                 {
-                    strMess = "TreeListFile does not support seeking!\nCan't check to see if it is a DOS file!";
+                    strMess = "TreeListFile does not support seeking!\nCan't check to see if it is a DOS directory listing!!";
                     throw new ApplicationException(strMess);
                 }
 
             }//While Loop
+             /**Terrence Knoesen 
+              * Check that the amount over
+            **/
+            if (lngIdx >= lngFileSize || lngIdx >= 200)
+            {
+                strMess = String.Format("The TreeListFile '{0}' is too small to be a DOS directory list!",objTreeListFile.FullName);
+                throw new ApplicationException(strMess);
+            }
             string strLastLines = null;
             lstBuf.Reverse();
             foreach (var item in lstBuf)
@@ -169,6 +177,14 @@ namespace TreeSizer
 
                 fldFiles = fldFiles.Replace(",", string.Empty);
                 long.TryParse(fldFiles, out lngFilesCnt);
+            }
+            else
+            {
+                /**Terrence Knoesen 
+                 * This is not a DOS Directory listing file so throw an error
+                **/
+                strMess = String.Format("The TreeListFile '{0}' is not a DOS directory listing!", objTreeListFile.FullName);
+                throw new ApplicationException(strMess);
             }
 
             mobjLog.Debug("Exit");
