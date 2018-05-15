@@ -87,11 +87,66 @@ namespace TreeSizer.UnitTest
         }
 
         [Test]
-        public void CMTreeListProcessor_Start_CheckDosDirFile()
+        public void CMTreeListProcessor_Start_CheckLagerDirs()
         {
             string strMess;
-            //string strFileName = Path.Combine(mstrDataDir, "smalldir.txt");
-            //string strFileName = Path.Combine(mstrDataDir, "Largerdirs.txt");
+            string strFileName = Path.Combine(mstrDataDir, "smalldir.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception)
+            {
+                strMess = "Creating the CMDTreeListProcessor should work!";
+                Assert.Fail(strMess);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                strMess = "Straight fail!\n" + ex.Message;
+                Assert.Fail(strMess);
+            }
+
+
+        }
+
+        [Test]
+        public void CMTreeListProcessor_Start_CheckSmallDirs()
+        {
+            string strMess;
+            string strFileName = Path.Combine(mstrDataDir, "Largerdirs.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception)
+            {
+                strMess = "Creating the CMDTreeListProcessor should work!";
+                Assert.Fail(strMess);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                strMess = "Straight fail!\n" + ex.Message;
+                Assert.Fail(strMess);
+            }
+
+
+        }
+
+        [Test]
+        public void CMTreeListProcessor_Start_CheckBigDirs()
+        {
+                       
+            string strMess;
             string strFileName = Path.Combine(mstrDataDir, "BigDirs.txt");
             
             CMDTreeListProcessor objProc = null;
@@ -116,6 +171,9 @@ namespace TreeSizer.UnitTest
 
             
         }
+
+        
+
         #endregion //================================================
     }
 

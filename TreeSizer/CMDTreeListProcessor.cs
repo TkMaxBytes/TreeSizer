@@ -3,39 +3,95 @@ using System.IO;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using log4net;
 
 namespace TreeSizer
 {
+
     public class CMDTreeListProcessor : TreeListProcessor
     {
 
-        public CMDTreeListProcessor(FileInfo objfile) : base (objfile) {}
+        #region Constants
 
+        #endregion //================================================
 
-        public void Start() {
-            string strMess;
-            if (mobjTreeListFile == null)
+        #region Enums
+
+        #endregion //================================================
+
+        #region Variables
+        private ILog mobjLog =  LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public CMDTreeListProcessor(FileInfo objfile) : base(objfile) { }
+        // Terrence Knoesen Number of Dirs in TreeListFile.
+        long mlngDirs = 0;
+        // Terrence Knoesen Number of Files in TreeListFile.
+        long mlngFiles = 0;
+        #endregion //================================================
+
+        #region Constructors
+
+        #endregion //================================================
+
+        #region Properties
+
+        #endregion //================================================
+
+        #region Methods
+        public void Start()
+        {
+            string strMess = null;
+            mobjLog.Debug("Enter");
+            /**Terrence Knoesen 
+             * Check to see if this is a DOS directory listing
+            **/
+            try
+            {
+                CheckIsDosFile(mobjTreeListFile, out mlngDirs, out mlngFiles);
+            }
+            catch (Exception ex)
+            {
+                strMess = "Failed to establish type of file!";
+                mobjLog.Fatal(strMess, ex);
+                mobjLog.Debug("Exit");
+                throw ex;
+            }
+
+            mobjLog.Debug("Exit");
+        }//Start Method
+
+        private void CheckIsDosFile(FileInfo objTreeListFile, out long lngDirsCnt, out long lngFilesCnt)
+        {
+
+            string strMess = null;
+            mobjLog.Debug("Enter");
+            lngDirsCnt = 0;
+            lngFilesCnt = 0;
+
+            strMess = "Check to see if this is a DOS type directory listing.";
+            mobjLog.Debug(strMess);
+
+            if (objTreeListFile == null)
             {
                 strMess = "There is no TreeListFile specified!";
                 throw new ApplicationException(strMess);
             }
-            if (!mobjTreeListFile.Exists)
+            if (!objTreeListFile.Exists)
             {
-                strMess = String.Format("The TreeListFile doesn't exist!\n\nFile is '{0}' ", mobjTreeListFile.FullName);
+                strMess = String.Format("The TreeListFile doesn't exist!\n\nFile is '{0}' ", objTreeListFile.FullName);
                 throw new ApplicationException(strMess);
             }
             /**Terrence Knoesen 
              * Check to make sure that the file is not zero Length
             **/
-            if (mobjTreeListFile.Length == 0)
+            if (objTreeListFile.Length == 0)
             {
-                strMess = String.Format("The TreeListFile '{0}' \n\nIs zero bytes in length!", mobjTreeListFile.FullName);
+                strMess = String.Format("The TreeListFile '{0}' \n\nIs zero bytes in length!", objTreeListFile.FullName);
                 throw new ApplicationException(strMess);
             }
 
 
             long lngFileSize = 0;
-            StreamReader strm = new StreamReader(mobjTreeListFile.FullName);
+            StreamReader strm = new StreamReader(objTreeListFile.FullName);
             List<int> lstBuf = new List<int>();
             long lngIdx = 0;
             lngFileSize = strm.BaseStream.Length;
@@ -51,31 +107,29 @@ namespace TreeSizer
                 {
                     strmB.Seek(lngFileSize - lngIdx, SeekOrigin.Begin);
                     lstBuf.Add(strmB.ReadByte());
-                    if (lstBuf[lstBuf.Count -1] == 10) intLineCnt++;
-                    Debug.Write(Char.ConvertFromUtf32(lstBuf[lstBuf.Count - 1]));
-                    
-
+                    if (lstBuf[lstBuf.Count - 1] == 10) intLineCnt++;
                 }
                 else
                 {
-                    blnRead = false;
+                    strMess = "TreeListFile does not support seeking!\nCan't check to see if it is a DOS file!";
+                    throw new ApplicationException(strMess);
                 }
 
-            }
+            }//While Loop
             string strLastLines = null;
             lstBuf.Reverse();
             foreach (var item in lstBuf)
             {
                 strLastLines += Char.ConvertFromUtf32(item);
             }
-            Debug.WriteLine(strLastLines);
+
             strLastLines = strLastLines.Replace("\r", String.Empty);
             strLastLines = strLastLines.Replace("\n", String.Empty);
-            Debug.WriteLine(strLastLines);
+
             /**Terrence Knoesen 
              * Check that we have a DOS dir command produced file.
             **/
-            //"Total Files Listed:"
+            //"Total Files Listed:"1
             Regex objRegx = new Regex(@"Total\sFiles\sListed\:");
             string fldFiles = null;
             string fldDirs = null;
@@ -99,7 +153,8 @@ namespace TreeSizer
                     colMatches = objRegx.Matches(strLastLines);
                     if (colMatches.Count > 0)
                     {
-                        fldDirs  = colMatches[0].Groups["fldDirs"].Value;
+                        fldDirs = colMatches[0].Groups["fldDirs"].Value;
+
                     }
                     else
                     {
@@ -107,11 +162,24 @@ namespace TreeSizer
                     }
                 }
             }
-            
+            if (blnIsDosDir)
+            {
+                fldDirs = fldDirs.Replace(",", string.Empty);
+                long.TryParse(fldDirs, out lngDirsCnt);
 
+                fldFiles = fldFiles.Replace(",", string.Empty);
+                long.TryParse(fldFiles, out lngFilesCnt);
+            }
 
-            
-        }//Start Method
+            mobjLog.Debug("Exit");
+        }
+        #endregion //================================================
 
-    }
-}
+        #region Events
+
+        #endregion //================================================
+
+    }//Class
+
+}//NameSpcae
+
