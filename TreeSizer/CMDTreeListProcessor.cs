@@ -119,7 +119,7 @@ namespace TreeSizer
              /**Terrence Knoesen 
               * Check that the amount over
             **/
-            if (lngIdx >= lngFileSize || lngIdx >= 200)
+            if (lngIdx >= lngFileSize)
             {
                 strMess = String.Format("The TreeListFile '{0}' is too small to be a DOS directory list!",objTreeListFile.FullName);
                 throw new ApplicationException(strMess);

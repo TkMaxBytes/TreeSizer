@@ -223,6 +223,31 @@ namespace TreeSizer.UnitTest
             }
         }
 
+        [Test]
+        public void CMTreeListProcessor_Start_NonDosListingTwoCharacters()
+        {
+
+            string strMess;
+            string strFileName = Path.Combine(mstrDataDir, "NotDosListTwoChar.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                Assert.True(ex.GetType() == typeof(ApplicationException));
+                Assert.True(ex.Message.Contains(" is too small to be a DOS directory list!"));
+            }
+        }
 
 
         #endregion //================================================
