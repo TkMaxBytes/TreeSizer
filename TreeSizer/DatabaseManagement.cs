@@ -72,7 +72,7 @@ namespace com.treesizer.data
             try
             {
                 objCon = new SQLiteConnection(String.Format("Data Source={0};", objfl.FullName));
-                
+                CreateDatabaseSchema(objCon);
             }
             catch (Exception ex)
             {
@@ -87,6 +87,79 @@ namespace com.treesizer.data
             mobjLog.Debug("Exit");
             return null;
         }
+
+
+        private static void CreateDatabaseSchema(SQLiteConnection objCon) {
+            string strMess = null;
+            mobjLog.Debug("Enter");
+            /**Terrence Knoesen 
+             * Check to see that there is a conneciton to the SQLite DB
+            **/
+            if (objCon == null)
+            {
+                strMess = "There is no SQLiteConnection specified";
+                mobjLog.Error(strMess);
+                throw new ArgumentNullException("objCon");
+            }
+            try
+            {
+                objCon.Open();
+            }
+            catch (Exception ex)
+            {
+                strMess = "Unable to open the database connnection!";
+                mobjLog.Error(strMess, ex);
+                throw ex;
+            }
+
+            if (objCon.State != System.Data.ConnectionState.Open)
+            {
+                strMess = String.Format("The connection to the database is not open!");
+                mobjLog.Error(strMess);
+                throw new ApplicationException(strMess);
+            }
+            /**Terrence Knoesen     
+             * Create the command that will be run to create
+             * the schema for the database.
+            **/
+            string strSQL = null;
+            strSQL = @"CREATE TABLE tblNode(
+                        fldID            TEXT PRIMARY KEY    NOT NULL,
+                        fldParentID      TEXT                        ,
+                        fldPath          TEXT                NOT NULL,
+                        fldSize          NUMBER              NOT NULL
+                        );";
+            SQLiteCommand objCmd = null;
+            try
+            {
+                objCmd = new SQLiteCommand(strSQL, objCon);
+            }
+            catch (Exception ex)
+            {
+                strMess = "Unable to create the database command for creating the scheama!";
+                mobjLog.Error(strMess, ex);
+                throw new ApplicationException(strMess, ex);
+            }
+
+            /**Terrence Knoesen 
+             * Attempt to create the schema specified above.
+            **/
+            try
+            {
+                objCmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                strMess = "Couldn't execute the command to create the schema!";
+                mobjLog.Error(strMess, ex);
+                throw new ApplicationException(strMess, ex);
+            }
+
+
+
+            mobjLog.Debug("Exit");
+        }
+
         #endregion //================================================
 
         #region Events

@@ -317,6 +317,27 @@ namespace com.treesizer.tests
 
         }
 
+
+        [Test]
+        public void DatabaseManagement_CheckDatabase_CreateSchemaNoConnection()
+        {
+            /**Terrence Knoesen 
+             * Check that we can create a Database File if the path is 
+             * correct.
+            **/
+            string strDbPath = @"C:\temp\myschema.db";
+
+            try
+            {
+                DatabaseManagement.CheckDatabase(strDbPath);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+        }
+
         #endregion //================================================
 
         #region Events
