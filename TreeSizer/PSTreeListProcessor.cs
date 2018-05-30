@@ -6,7 +6,7 @@ using System.IO;
 using System.ComponentModel;
 using System.Diagnostics;
 
-namespace TreeSizer
+namespace com.treesizer.process
 {
     public delegate void ProgressHandler(object sender, object userInfo);
     public delegate void StartHandler(object sender, object userInfo);

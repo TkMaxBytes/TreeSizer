@@ -2,8 +2,9 @@
 using System.Reflection;
 using log4net;
 using System.Windows.Forms;
+using com.treesizer.ui;
 
-namespace TreeSizer
+namespace com.treesizer
 {
     static class Program
     {
@@ -47,5 +48,6 @@ namespace TreeSizer
             }
         }
 
+        
     }
 }

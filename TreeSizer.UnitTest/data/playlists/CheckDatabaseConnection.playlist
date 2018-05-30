@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="com.treesizer.tests.DatabaseManagementTests.DatabaseManagement_CheckDatabase_NullPathArgument" /><Add Test="com.treesizer.tests.DatabaseManagementTests.DatabaseManagement_CheckDatabase_PathNoFolder" /><Add Test="com.treesizer.tests.DatabaseManagementTests.DatabaseManagement_CheckDatabase_CreateDatabase" /></Playlist>

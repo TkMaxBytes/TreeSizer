@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using log4net;
+using System.Data.SQLite;
 
-namespace TreeSizer
+namespace com.treesizer.process
 {
 
     public class CMDTreeListProcessor : TreeListProcessor
@@ -58,6 +58,7 @@ namespace TreeSizer
 
             mobjLog.Debug("Exit");
         }//Start Method
+
 
         private void CheckIsDosFile(FileInfo objTreeListFile, out long lngDirsCnt, out long lngFilesCnt)
         {

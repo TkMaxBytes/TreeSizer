@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TreeSizer.Properties
+namespace com.treesizer.process.Properties
 {
 
 

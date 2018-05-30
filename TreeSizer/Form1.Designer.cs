@@ -1,4 +1,4 @@
-﻿namespace TreeSizer
+﻿namespace com.treesizer.ui
 {
     partial class Form1
     {

@@ -2,10 +2,10 @@
 using NUnit.Framework;
 using System.IO;
 using System.Reflection;
-using System.Diagnostics;
-using TreeSizer;
+using com.treesizer.process;
+using com.treesizer.data;
 
-namespace TreeSizer.UnitTest
+namespace com.treesizer.tests
 {
     [TestFixture]
     public class TreeListProcessorTests
@@ -249,9 +249,82 @@ namespace TreeSizer.UnitTest
             }
         }
 
-
+        
         #endregion //================================================
     }
+
+    [TestFixture]
+    public class DatabaseManagementTests
+    {
+
+        #region Constants
+
+        #endregion //================================================
+
+        #region Enums
+
+        #endregion //================================================
+
+        #region Variables
+
+        #endregion //================================================
+
+        #region Constructors
+
+        #endregion //================================================
+
+        #region Properties
+
+        #endregion //================================================
+
+        #region Methods
+        [Test]
+        public void DatabaseManagement_CheckDatabase_NullPathArgument()
+        {
+            /**Terrence Knoesen 
+             * Check that the correct exceptions are thrown if 
+             * there is a null path to to the database file (SQLite).
+            **/
+            var ex = Assert.Throws<ArgumentNullException>(() => DatabaseManagement.CheckDatabase(null));
+        }
+
+        [Test]
+        public void DatabaseManagement_CheckDatabase_PathNoFolder()
+        {
+            /**Terrence Knoesen 
+             * Check that an IO Excpetion is thrown if the path doesn't exists.
+            **/
+            var ex = Assert.Throws<IOException>(() => DatabaseManagement.CheckDatabase(@"c:\random\test\dir\my.db"));
+        }
+
+        [Test]
+        public void DatabaseManagement_CheckDatabase_CreateDatabase()
+        {
+            /**Terrence Knoesen 
+             * Check that we can create a Database File if the path is 
+             * correct.
+            **/
+            string strDbPath = @"C:\temp\my.db";
+
+            try
+            {
+                DatabaseManagement.CheckDatabase(strDbPath);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+        }
+
+        #endregion //================================================
+
+        #region Events
+
+        #endregion //================================================
+
+    }
+
 
     static class Utils
     {

@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using DotNetUtils;
-using System.Diagnostics;
+using com.treesizer.process;
 
-namespace TreeSizer
+namespace com.treesizer.ui
 {
     public partial class Form1 : Form
     {

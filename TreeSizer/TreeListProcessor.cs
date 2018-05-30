@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.ComponentModel;
 
-namespace TreeSizer
+namespace com.treesizer.process
 {
     public class TreeListProcessor
     {

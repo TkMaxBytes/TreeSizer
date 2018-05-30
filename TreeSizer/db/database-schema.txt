@@ -1,0 +1,5 @@
+CREATE TABLE tblNode(
+   fldID            TEXT PRIMARY KEY    NOT NULL,
+   fldParentID      TEXT                        ,
+   fldPath          TEXT                NOT NULL
+);
