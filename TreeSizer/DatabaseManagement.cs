@@ -21,6 +21,7 @@ namespace com.treesizer.data
         #region Variables
         private static readonly ILog mobjLog =
         LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static SQLiteConnection mobjDbConnection = null;
         #endregion //================================================
 
         #region Constructors
@@ -46,13 +47,66 @@ namespace com.treesizer.data
             **/
             if (!File.Exists(strDatabasePath)) {
 
-                CreateDatabase(strDatabasePath);
+                mobjDbConnection = CreateDatabase(strDatabasePath);
             }
 
 
             mobjLog.Debug("Exit");
         }
 
+
+
+        public static SQLiteConnection GetDbConnection(string strDatabasePath)
+        {
+            string strMess = null;
+            mobjLog.Debug("Enter");
+
+            SQLiteConnection objCon = null;
+
+            if (String.IsNullOrEmpty(strDatabasePath))
+            {
+                throw new ArgumentNullException("strDatabasePath");
+            }
+            FileInfo objfl = new FileInfo(strDatabasePath);
+            if (!objfl.Directory.Exists)
+            {
+                strMess = String.Format("The directory '{0}' doesn't exist!", objfl.Directory);
+                throw new IOException(strMess);
+            }
+
+            /**Terrence Knoesen 
+             * Attempt to create the database SQLITE file first.
+            **/
+            if (!File.Exists(strDatabasePath))
+            {
+
+                mobjDbConnection = CreateDatabase(strDatabasePath);
+                mobjLog.Debug("Exit");
+                return mobjDbConnection;
+            }
+            else
+            {
+                /**Terrence Knoesen 
+                 * Just need to open the database
+                **/
+                try
+                {
+                    objCon = new SQLiteConnection(String.Format("Data Source={0};", objfl.FullName));
+                    mobjDbConnection = objCon;
+                    mobjLog.Debug("Exit");
+                    return mobjDbConnection;
+                }
+                catch (Exception ex)
+                {
+                    strMess = String.Format("There was an error trying to connect to database'{0}' !", strDatabasePath);
+                    mobjLog.Error(strMess,ex);
+                    throw ex;
+                }
+            }
+
+
+            mobjLog.Debug("Exit");
+        }
 
         private static SQLiteConnection CreateDatabase(string strDatabasePath) {
             string strMess = null;
@@ -73,6 +127,7 @@ namespace com.treesizer.data
             {
                 objCon = new SQLiteConnection(String.Format("Data Source={0};", objfl.FullName));
                 CreateDatabaseSchema(objCon);
+                return objCon;
             }
             catch (Exception ex)
             {

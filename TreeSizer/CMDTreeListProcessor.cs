@@ -55,6 +55,9 @@ namespace com.treesizer.process
                 mobjLog.Debug("Exit");
                 throw ex;
             }
+            /**Terrence Knoesen 
+             * Now we can process the file.
+            **/
 
             mobjLog.Debug("Exit");
         }//Start Method

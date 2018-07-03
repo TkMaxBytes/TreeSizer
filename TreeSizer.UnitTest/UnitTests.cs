@@ -338,6 +338,27 @@ namespace com.treesizer.tests
 
         }
 
+
+        [Test]
+        public void DatabaseManagement_GetDbConnection_GetAndOrCreateDatabaseConnection()
+        {
+            /**Terrence Knoesen 
+             * Check that we can create a Database File if the path is 
+             * correct.
+            **/
+            string strDbPath = @"C:\temp\my.db";
+
+            try
+            {
+                DatabaseManagement.GetDbConnection(strDbPath);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+        }
+
         #endregion //================================================
 
         #region Events
