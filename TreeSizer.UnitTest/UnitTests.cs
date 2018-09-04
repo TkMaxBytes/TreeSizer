@@ -249,8 +249,37 @@ namespace com.treesizer.tests
             }
         }
 
-        
+        [Test]
+        public void CMTreeListProcessor_ProcessCommandLineDirListing_CheckNullParams()
+        {
+            string strMess;
+            string strFileName = Path.Combine(mstrDataDir, "Largerdirs.txt");
+            CMDTreeListProcessor objProc = null;
+            try
+            {
+                objProc = new CMDTreeListProcessor(new FileInfo(strFileName));
+            }
+            catch (Exception)
+            {
+                strMess = "Creating the CMDTreeListProcessor should work!";
+                Assert.Fail(strMess);
+            }
+            try
+            {
+                objProc.Start();
+            }
+            catch (Exception ex)
+            {
+                strMess = "Straight fail!\n" + ex.Message;
+                Assert.Fail(strMess);
+            }
+
+
+        }
+
+
         #endregion //================================================
+
     }
 
     [TestFixture]

@@ -193,6 +193,24 @@ namespace com.treesizer.process
 
             mobjLog.Debug("Exit");
         }
+
+
+        private void ProcessCommandLineDirListing(FileInfo objListingFile, SQLiteConnection objDbCon) {
+            mobjLog.Debug("Enter");
+            string strMess = null;
+            /**Terrence Knoesen 
+             * Check the incomming parameters
+            **/
+            if (objListingFile == null)
+            {
+                strMess = "The DOS directory listing file must be specified!";
+                throw new ArgumentNullException("objTreeListFile", strMess);
+            }
+
+
+            mobjLog.Debug("Exit");
+        }
+
         #endregion //================================================
 
         #region Events
