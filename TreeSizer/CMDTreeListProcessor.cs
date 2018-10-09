@@ -37,7 +37,10 @@ namespace com.treesizer.process
         #endregion //================================================
 
         #region Methods
-        public void Start()
+        /// <summary>
+        /// This is is the main process and should process the command line file into the SQLite database.
+        /// </summary>
+        public override void Start()
         {
             string strMess = null;
             mobjLog.Debug("Enter");
@@ -99,10 +102,10 @@ namespace com.treesizer.process
             List<int> lstBuf = new List<int>();
             long lngIdx = 0;
             lngFileSize = strm.BaseStream.Length;
-            int intLineCnt = 0;
+            //int intLineCnt = 0;
             Stream strmB = strm.BaseStream;
             byte[] bytBuff = new byte[1];
-            bool blnRead = true;
+            //bool blnRead = true;
             bool blnIsDosDir = false;
             while (lngIdx < lngFileSize & lngIdx < 200)
             {

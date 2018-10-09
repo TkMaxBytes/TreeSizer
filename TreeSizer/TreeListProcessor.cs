@@ -37,7 +37,7 @@ namespace com.treesizer.process
         }
 
 
-        public void Start()
+        public virtual void Start()
         {
             string strMess;
             if (mobjTreeListFile == null)
