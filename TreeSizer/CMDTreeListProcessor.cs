@@ -4,10 +4,15 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using log4net;
 using System.Data.SQLite;
+using com.treesizer.exceptions;
 
 namespace com.treesizer.process
 {
 
+    /// <summary>
+    /// This class will accept a file containing a DOS Directory listing and after checking to see that it is a of the expected type it will produce a set of nodes for saving in a database.
+    /// </summary>
+    /// <seealso cref="com.treesizer.process.TreeListProcessor" />
     public class CMDTreeListProcessor : TreeListProcessor
     {
 
@@ -20,7 +25,7 @@ namespace com.treesizer.process
         #endregion //================================================
 
         #region Variables
-        private ILog mobjLog =  LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private ILog mobjLog = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public CMDTreeListProcessor(FileInfo objfile) : base(objfile) { }
         // Terrence Knoesen Number of Dirs in TreeListFile.
         long mlngDirs = 0;
@@ -65,7 +70,13 @@ namespace com.treesizer.process
             mobjLog.Debug("Exit");
         }//Start Method
 
-
+        /// <summary>
+        /// The method will check to see if the file that <code>objTreeListFile</code> parameter is actually a DOS directory listing file.
+        /// </summary>
+        /// <param name="objTreeListFile">A DOS directory listing file.</param>
+        /// <param name="lngDirsCnt">Number of directories found in the file by reading the summary at the end of the file.</param>
+        /// <param name="lngFilesCnt">Again the number of files found in the summary at the end of the DOS Directory Listing file.</param>
+        /// <exception cref="ApplicationException">This error is thrown if there is no DOS Directory listing file.</exception>
         private void CheckIsDosFile(FileInfo objTreeListFile, out long lngDirsCnt, out long lngFilesCnt)
         {
 
@@ -93,7 +104,8 @@ namespace com.treesizer.process
             if (objTreeListFile.Length == 0)
             {
                 strMess = String.Format("The TreeListFile '{0}' \n\nIs zero bytes in length!", objTreeListFile.FullName);
-                throw new ApplicationException(strMess);
+                //throw new TSFileZeroLengthException(strMess);
+                throw new TSFileZeroLengthException(strMess);
             }
 
 
@@ -114,7 +126,7 @@ namespace com.treesizer.process
                 {
                     strmB.Seek(lngFileSize - lngIdx, SeekOrigin.Begin);
                     lstBuf.Add(strmB.ReadByte());
-                    
+
                 }
                 else
                 {
@@ -128,7 +140,7 @@ namespace com.treesizer.process
             **/
             if (lngIdx >= lngFileSize)
             {
-                strMess = String.Format("The TreeListFile '{0}' is too small to be a DOS directory list!",objTreeListFile.FullName);
+                strMess = String.Format("The TreeListFile '{0}' is too small to be a DOS directory list!", objTreeListFile.FullName);
                 throw new ApplicationException(strMess);
             }
             string strLastLines = null;
@@ -198,7 +210,8 @@ namespace com.treesizer.process
         }
 
 
-        private void ProcessCommandLineDirListing(FileInfo objListingFile, SQLiteConnection objDbCon) {
+        private void ProcessCommandLineDirListing(FileInfo objListingFile, SQLiteConnection objDbCon)
+        {
             mobjLog.Debug("Enter");
             string strMess = null;
             /**Terrence Knoesen 

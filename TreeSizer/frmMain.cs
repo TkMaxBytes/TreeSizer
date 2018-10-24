@@ -6,10 +6,10 @@ using com.treesizer.process;
 
 namespace com.treesizer.ui
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         private PSTreeListProcessor objTree;
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
             //this.Text = Program.GetApplicationName(1);
